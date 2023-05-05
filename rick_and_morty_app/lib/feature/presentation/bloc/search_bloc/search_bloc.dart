@@ -26,24 +26,6 @@ class PersonSearchBloc extends Bloc<PersonSearchEvent, PersonSearchState> {
     );
   }
 
-  // @override
-  // Stream<PersonSearchState> mapEventToState(PersonSearchEvent event) async* {
-  //   if (event is SearchPersons) {
-  //     yield* _mapFetchPersonsToState(event.personQuery);
-  //   }
-  // }
-
-  // Stream<PersonSearchState> _mapFetchPersonsToState(String personQuery) async* {
-  //   yield PersonSearchLoading();
-
-  //   final failureOrPerson = await searchPerson(SearchPersonParams(query: personQuery));
-
-  //   yield failureOrPerson.fold(
-  //     (failure) => PersonSearchError(message: _mapFailureToMessage(failure)), 
-  //     (person) => PersonSearchLoaded(persons: person)
-  //   );
-  // }
-
   String _mapFailureToMessage(Failure failure) {
     switch (failure.runtimeType) {
       case ServerFailure:
